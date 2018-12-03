@@ -1,0 +1,16 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "A Dummy API Server for Interview project",
+  "author": "Lei Chen",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha --reporter spec"
+  }
+}
