@@ -36,8 +36,8 @@ app.get("/api/users",function (req,res) {
     res.status(400).json({ errors: { global: 'request errors -- no users data' } });
   }
 })
-app.listen('8000',function () {
-  console.log('>listening on 8000')
+app.listen('8080',function () {
+  console.log('>listening on 8080')
 });
 
 module.exports = app;

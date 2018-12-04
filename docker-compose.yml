@@ -1,13 +1,17 @@
 version: '3.0'
 
 services:
-  app:
+  api:
       container_name: api-service
       build: ./services/api
       volumes:
         - './services/api:/usr/src/app'
       ports:
-        - 3001:8000
-
-
-
+        - 8080:8080
+  web:
+        container_name: web-service
+        build: ./services/web
+        volumes:
+          - '/usr/src/app'
+        ports:
+          - 8000:3000

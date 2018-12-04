@@ -1,0 +1,2 @@
+export const SET_COLLAPSED = 'SET_COLLAPSED'
+export const SET_ISMOBILE = 'SET_COLLAPSED'
