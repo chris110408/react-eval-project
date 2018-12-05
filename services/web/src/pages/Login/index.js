@@ -35,8 +35,8 @@ const NormalLoginForm = ({
     validateFieldsAndScroll((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values)
+        dispatch(initlogin())
       }
-      dispatch(initlogin())
     })
   }
 

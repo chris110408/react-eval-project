@@ -4,15 +4,15 @@
 import request from '../utils/request'
 
 export async function requestInitUser () {
-  return request('/api/users')
+  return request('http://localhost:8080/api/users')
 }
 
 export async function requestFetchRepos () {
-  return request('/api/repos')
+  return request('http://localhost:8080/api/repos')
 }
 
 export async function requestFetchEvents () {
-  return request('/api/events')
+  return request('http://localhost:8080/api/events')
 }
 
 export async function requestLogin (params) {

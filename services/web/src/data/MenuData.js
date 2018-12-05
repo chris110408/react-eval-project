@@ -2,19 +2,30 @@ import { isUrl } from '../utils/utils'
 
 export const menuData = [
   {
+    name: 'User GitHub Info',
+    icon: 'github',
+    path: 'userinfo',
+    children: [
+      {
+        name: 'Main Page',
+        path: 'main'
+      }
+    ]
+  },
+  {
     name: 'Analysis',
-    icon: 'Analysis',
+    icon: 'bar-chart',
     path: 'Analysis',
     children: [
       {
-        name: 'general',
-        path: 'general'
+        name: 'Page',
+        path: 'main'
       }
     ]
   }
 ]
 
-function formatter (data, parentPath = '', parentAuthority) {
+function formatter(data, parentPath = '', parentAuthority) {
   return data.map(item => {
     let { path } = item
     if (!isUrl(path)) {

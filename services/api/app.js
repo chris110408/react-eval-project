@@ -1,11 +1,14 @@
 var express = require('express')
 var app = express();
 
-var allowCrossDomain = function(req, res, next) {//设置response头部的中间件
-  res.header('Access-Control-Allow-Origin', 'http://localhost:8089');//8089是vue项目的端口，这里相对于白名单
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  res.header('Access-Control-Allow-Credentials','true');
+var allowCrossDomain = function(req, res, next) {
+  console.log(req.headers.origin)
+  if( req.headers.origin == 'http://localhost:3000' || req.headers.origin == 'http://localhost:8000' ){
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Credentials','true');
+  }
   next();
 };
 app.use(allowCrossDomain);

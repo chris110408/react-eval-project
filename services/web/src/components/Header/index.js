@@ -1,11 +1,13 @@
 import React from 'react'
 import { Menu, Icon, Spin, Dropdown, Avatar } from 'antd'
 import styled from 'styled-components'
+import PageHeader from '../PageHeader'
+import PropTypes from 'prop-types'
 
 const DivRight = styled.div`
   padding: 0 1rem;
   float: right;
-  fheight: 100%;
+  height: 100%;
   .action {
     cursor: pointer;
     padding: 0 12px;
@@ -49,13 +51,8 @@ const StyledIconTrigger = styled(Icon)`
     // background: @primary-1;
   }
 `
-
-const GlobalHeader = ({
-  collapsed,
-  onCollapse,
-  onHeadMenuClick,
-  currentUser
-}) => {
+// eslint-disable-next-line
+const GlobalHeader = ({ collapsed, onCollapse, onHeadMenuClick, currentUser}) => {
   const menu = (
     <Menu selectedKeys={[]} onClick={onHeadMenuClick}>
       <Menu.Item>

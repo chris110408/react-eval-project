@@ -18,7 +18,7 @@ export function * loginUser () {
 
   if (response) {
     yield put(login(response))
-    yield put(push('/UserInfo'))
+    yield put(push('/userinfo/main'))
   }
 }
 

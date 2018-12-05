@@ -7,8 +7,9 @@ import { Helmet } from 'react-helmet'
 import { Switch, Route } from 'react-router-dom'
 
 import LoginPage from '../Login'
-// import BasicLayout from "../../layouts/";
-
+import BasicLayout from '../../layouts/'
+import UserInfoPage from '../UserInfo'
+import AnalysisPage from '../Analysis'
 import { withSaga } from '../Login/model/sagas'
 
 // const GuestRoute = withProps({ authority: USER_TYPE_GUEST })(AuthorizedRouter);
@@ -24,6 +25,10 @@ const App = ({ dispatch, user }) => {
 
       <Switch>
         <Route exact path='/' component={LoginPage} />
+        <BasicLayout currentUser={user}>
+          <Route path='/userinfo/main' component={UserInfoPage} />
+          <Route path='/analysis/main' component={AnalysisPage} />
+        </BasicLayout>
       </Switch>
     </div>
   )

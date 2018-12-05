@@ -8,7 +8,7 @@ import { routerReducer } from 'react-router-redux'
 import { USER_LOGGED_IN } from './pages/Login/model/actions'
 import { SET_COLLAPSED, SET_ISMOBILE } from './layouts/model/actions'
 /*
- * routeReducer
+ * rootReducer
  *
  * The reducer merges route location changes into our immutable state.
  * The change is necessitated by moving to react-router-redux@5

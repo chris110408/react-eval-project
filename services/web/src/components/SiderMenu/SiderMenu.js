@@ -2,6 +2,7 @@ import React from 'react'
 import { Layout, Menu, Icon } from 'antd'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 const { Sider } = Layout
 const { SubMenu } = Menu
@@ -12,8 +13,11 @@ const DivLogo = styled.div`
   margin: 16px;
   margin-top: 10px;
   text-align: center;
+
   .logo {
-    margin-top: 3px;
+    width: 100%;
+    height: auto;
+    magin: auto;
   }
 `
 
@@ -78,8 +82,8 @@ export const SiderMenu = ({
         onClick={
           isMobile
             ? () => {
-              onCollapse(true)
-            }
+                onCollapse(true)
+              }
             : undefined
         }
       >
