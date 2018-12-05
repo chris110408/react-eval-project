@@ -1,4 +1,4 @@
-import { createEventArray } from './createEventArray'
+import { createEventArray, convertListToArray } from './createEventArray'
 import { createRepoArray } from './createRepoArray'
 
-export { createEventArray, createRepoArray }
+export { createEventArray, createRepoArray, convertListToArray }

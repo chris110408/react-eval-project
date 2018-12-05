@@ -3,6 +3,8 @@
  */
 
 import { call, put, takeLatest, all, fork } from 'redux-saga/effects'
+import { createEventArray, createRepoArray, convertListToArray } from '../fns'
+
 import {
   FETCH_EVENTS,
   FETCH_REPOS,
@@ -17,7 +19,8 @@ export function* fetchRepos(action) {
   const response = yield call(requestFetchRepos)
 
   if (response) {
-    yield put(updateReposAction(response))
+    const data = yield call(createRepoArray, response)
+    yield put(updateReposAction(data))
   }
   // else push to 404
 }
@@ -26,9 +29,9 @@ export function* fetchEvents(action) {
   const response = yield call(requestFetchEvents)
 
   if (response) {
-    yield put(updateEventsAction(response))
+    const trimedData = yield call(createEventArray, response)
+    yield put(updateEventsAction(trimedData))
   }
-
 }
 
 /**

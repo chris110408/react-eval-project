@@ -8,8 +8,8 @@ import { repoSelecter, eventSelecter, userSelecter } from './model/selectors'
 
 const mapStateToProps = state => ({
   user: userSelecter(state),
-  repo_data: repoSelecter(state),
-  event_data: eventSelecter(state)
+  repoData: repoSelecter(state),
+  eventData: eventSelecter(state)
 })
 
 const withConnect = connect(mapStateToProps)

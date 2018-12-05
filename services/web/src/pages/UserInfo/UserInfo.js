@@ -8,31 +8,53 @@ import PageHeader from '../../components/PageHeader'
 import { MainPageDiv } from './styles'
 import { lifecycle } from 'recompose'
 import { fetchReposAction, fetchEventsAction } from './model/actions'
-import { map, sort, split, compose, last, uniqWith, eqBy } from 'ramda'
+// import { createEventArray } from './fns'
+
+import {
+  reduce,
+  map,
+  sort,
+  split,
+  compose,
+  last,
+  uniqWith,
+  eqBy,
+  toPairs
+} from 'ramda'
 // import shortid from 'shortid'
 
-import { createEventArray, createRepoArray } from './fns/'
+import { createEventArray } from './fns/'
 
-import { TagCloud, ChartCard, WaterWave } from 'ant-design-pro/lib/Charts'
+export const UserInfo = ({ dispatch, user, repoData, eventData }) => {
+  const createSingleDateEvent = (acc, item) => {
+    const key = item.created_at
+    const _type = item.type
 
-export const UserInfo = ({ dispatch, user, repo_data, event_data }) => {
-  const byType = obj => {
-    return obj.type
+    if (acc[`${key}`]) {
+      if (acc[`${key}`][[`${_type}`]]) {
+        acc[`${key}`][[`${_type}`]] = acc[`${key}`][[`${_type}`]] + 1
+      } else {
+        acc[`${key}`][[`${_type}`]] = 1
+      }
+      return acc
+    }
+    let initObj = {}
+    initObj[`${_type}`] = 1
+    acc[`${key}`] = Object.assign({}, initObj)
+    return acc
   }
-  const typeEq = eqBy(byType)
-  // type created_at repo:name("npm/npm") repo:url
-
-  console.log(uniqWith(typeEq)(event_data))
-
-  const tags = []
-  for (let i = 0; i < 50; i += 1) {
-    tags.push({
-      name: `TagClout-Title-${i}`,
-      value: Math.floor(Math.random() * 50) + 20
-    })
+  const convertArrayItemToObj = xs => {
+    return Object.assign({}, { date: xs[0] }, xs[1])
   }
 
-  console.log(tags);
+  const finalObj = compose(
+    map(convertArrayItemToObj),
+    toPairs,
+    reduce(createSingleDateEvent, {})
+  )
+
+  console.log(finalObj(eventData))
+
   return (
     <MainPageDiv>
       <PageHeader>
@@ -48,8 +70,8 @@ export const UserInfo = ({ dispatch, user, repo_data, event_data }) => {
       </PageHeader>
       <Row gutter={24}>
         <Col xl={24} lg={24} md={24} sm={24} xs={24}>
-          <Repos repos={createRepoArray(repo_data)} />
-          <Events events={createEventArray(event_data)} />
+          <Repos repos={repoData} />
+          <Events events={eventData} />
         </Col>
       </Row>
     </MainPageDiv>

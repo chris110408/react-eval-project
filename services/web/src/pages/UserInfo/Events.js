@@ -1,6 +1,8 @@
 import React from 'react'
 import { Card, Table } from 'antd'
 import PropTypes from 'prop-types'
+import { convertListToArray } from './fns'
+import { isEmpty } from 'immutable'
 
 const Events = ({ events }) => {
   const columns = [
@@ -30,18 +32,17 @@ const Events = ({ events }) => {
     <div>
       <Card style={{ marginBottom: 24, marginTop: 10 }} bordered={false}>
         <h2>All Events</h2>
-        <Table
-          style={{ marginBottom: 24, marginTop: 10 }}
-          columns={columns}
-          dataSource={events}
-        />
+        {/* check immutable list is empty or not if is not empty render*/}
+        {Object.keys(events)[0] !== 'size' && (
+          <Table
+            style={{ marginBottom: 24, marginTop: 10 }}
+            columns={columns}
+            dataSource={convertListToArray(events)}
+          />
+        )}
       </Card>
     </div>
   )
-}
-
-Events.propTypes = {
-  events: PropTypes.array
 }
 
 export { Events }

@@ -11,23 +11,6 @@ export const MainPageDiv = styled.div`
     width: 100%;
   
   }
-  
-  ${media.lessThan('medium')`
-
-    /* screen width is less than 768px (medium) */
- 
-  `}
-
-  ${media.between('medium', 'large')`
-    /* screen width is between 768px (medium) and 1170px (large) */
-  
-  `}
-
-  ${media.greaterThan('large')`
-
-    /* screen width is greater than 1170px (large) */
-  
-  `}
 
 
   

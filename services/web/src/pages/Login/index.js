@@ -40,8 +40,6 @@ const NormalLoginForm = ({
     })
   }
 
-  console.log(dispatch)
-
   return (
     <Divform>
       <Form onSubmit={handleSubmit} className='login-form'>

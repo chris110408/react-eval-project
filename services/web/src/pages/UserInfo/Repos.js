@@ -28,7 +28,6 @@ export const CardMetaDiv = styled.div`
 `
 
 const Repos = ({ repos }) => {
-  console.log(repos)
   return (
     <div>
       <Card
@@ -105,10 +104,6 @@ const Repos = ({ repos }) => {
       </Card>
     </div>
   )
-}
-
-Repos.propTypes = {
-  repos: PropTypes.array
 }
 
 export { Repos }

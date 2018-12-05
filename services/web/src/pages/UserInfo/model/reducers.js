@@ -4,7 +4,7 @@ import { fromJS } from 'immutable'
 import injectReducer from '../../../utils/injectReducer'
 
 export const initialRepoState = fromJS({
-  data: []
+  data: [],
 })
 
 export const repoReducer = (state = initialRepoState, action) => {
@@ -23,7 +23,8 @@ export const initialEventState = fromJS({
 export const eventReducer = (state = initialEventState, action) => {
   switch (action.type) {
     case UPDATE_EVENTS:
-      return state.set('data', action.payload)
+      return state
+        .set('data', action.payload)
     default:
       return state
   }

@@ -18,7 +18,8 @@ export const COLOR_MAP = {
   info: '#1890ff',
   textColor: 'fade(#000, 65%)',
   textColorSecondary: 'fade(#000, 45%)',
-  headingColor: 'fade(#000, 85%)'
+  headingColor: 'fade(#000, 85%)',
+  noIssue: '#01c0a1'
 }
 
 export const SCREEN_SIZE_MAP = {

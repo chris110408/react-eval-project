@@ -18,7 +18,7 @@ export const menuData = [
     path: 'Analysis',
     children: [
       {
-        name: 'Page',
+        name: 'Main Page',
         path: 'main'
       }
     ]

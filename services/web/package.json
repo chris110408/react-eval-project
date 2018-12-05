@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@antv/data-set": "^0.10.1",
     "AsyncStorage": "^0.1.5",
     "antd": "^3.2.0",
     "bizcharts": "^3.4.1",
@@ -14,6 +15,7 @@
     "enzyme": "^3.7.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-config-standard-react": "^7.0.2",
+    "g2": "^2.3.13",
     "gravatar-url": "^2.0.0",
     "hoist-non-react-statics": "^2.3.1",
     "immutable": "^3.8.2",
