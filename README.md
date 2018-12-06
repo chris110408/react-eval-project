@@ -59,7 +59,7 @@ you should able to  see the webpage at http://localhost:3000
 
 ##
 
-the structure of the project.
+### the structure of the project.
 
 there are tons of ways to structure the react project. I would love to change my preference for the future team. However, if I make the decision will choose the following structure which I used in this project.
 ##
@@ -83,7 +83,6 @@ there are tons of ways to structure the react project. I would love to change my
 
 only root reducer is inited at the beginning, other reducers and sagas are injected when I need them. the main config file is in the config/configure store.js   the rest parts are in the utils folder.
 
-##
 
 ### Data Visualization
 
@@ -92,7 +91,7 @@ https://github.com/alibaba/BizCharts/
 I would like to learn D3. and by the end of this month,  I should be able to develop charts like those I used in this project.
 
 
-##
+
 
 
 ### Algorithm and code style
