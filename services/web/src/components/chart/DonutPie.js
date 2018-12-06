@@ -82,7 +82,10 @@ class DonutPie extends React.Component {
             <Label
               content='percent'
               formatter={(val, item) => {
-                return item.point.item + ': ' + val
+                const point = item.point
+                let percent = point['percent']
+                percent = (percent * 100).toFixed(2) + '%'
+                return percent
               }}
             />
           </Geom>
