@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Chart, Geom, Coord, Label, Tooltip, Legend } from 'bizcharts'
+import PropTypes from 'prop-types'
 
 export default class Pie extends Component {
-  render() {
+  render () {
     const height = 260
     const width = 350
-    const { data, text, color } = this.props
+    const { data, color } = this.props
     const scale = {
       value: {
         formatter: val => {
@@ -35,4 +36,9 @@ export default class Pie extends Component {
       </div>
     )
   }
+}
+
+Pie.propTypes = {
+  data: PropTypes.array,
+  color: PropTypes.array
 }

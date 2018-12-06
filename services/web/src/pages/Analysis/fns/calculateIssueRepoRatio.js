@@ -3,7 +3,6 @@ import { reduce } from 'ramda'
 // sub calculate function used for getIssueNuM
 const calculateIssueRepo = (acc, item) => {
   if (item.has_issues) {
-    console.log(item.id)
     acc++
   }
   return acc
@@ -15,7 +14,6 @@ const getIssueNuM = reduce(calculateIssueRepo, 0)
 const calculateIssueRepoRatio = repoData => {
   const issueNum = getIssueNuM(repoData)
   const issueValue = Math.round((issueNum * 100) / repoData.length) / 100
-  console.log(issueValue)
   const noIssueValue = Math.round((1 - issueValue) * 100) / 100
   const ratioRepoData = [
     { type: 'Has Issue', value: issueValue },

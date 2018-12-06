@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
-  G2,
   Chart,
   Geom,
   Axis,
@@ -8,19 +7,13 @@ import {
   Coord,
   Label,
   Legend,
-  View,
-  Guide,
-  Shape,
-  Facet,
-  Util
+  Guide
 } from 'bizcharts'
 import DataSet from '@antv/data-set'
-import media from 'styled-media-query'
-import styled from 'styled-components'
-import { SCREEN_SIZE_MAP } from '../../global'
+import PropTypes from 'prop-types'
 
 class DonutPie extends React.Component {
-  render() {
+  render () {
     const { DataView } = DataSet
     const { Html } = Guide
     const { data } = this.props
@@ -52,7 +45,7 @@ class DonutPie extends React.Component {
           <Axis name='percent' />
           <Legend
             position='right'
-            offsetY={-window.innerHeight / 2 - 250}
+            offsetY={-window.innerHeight / 2 - 150}
             offsetX={-200}
           />
           <Tooltip
@@ -97,6 +90,10 @@ class DonutPie extends React.Component {
       </div>
     )
   }
+}
+
+DonutPie.propTypes = {
+  data: PropTypes.array
 }
 
 export default DonutPie

@@ -8,6 +8,7 @@ import { userSelecter } from './model/selectors'
 
 import { initlogin } from './model/actions'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Divform = styled.div`
   position: absolute;
@@ -95,6 +96,12 @@ const NormalLoginForm = ({
       </Form>
     </Divform>
   )
+}
+
+NormalLoginForm.propTypes = {
+  dispatch: PropTypes.func,
+  form: PropTypes.object,
+  user: PropTypes.func
 }
 
 const WrappedNormalLoginForm = Form.create()(NormalLoginForm)

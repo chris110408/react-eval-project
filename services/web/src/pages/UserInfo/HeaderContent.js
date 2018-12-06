@@ -18,9 +18,9 @@ const HeaderContent = ({ currentUser }) => {
   // use bio array to create bio tag
   const bioLabels = bio
     ? compose(
-        map(convertTextToTag),
-        map(trim)
-      )(split('•', bio))
+      map(convertTextToTag),
+      map(trim)
+    )(split('•', bio))
     : []
   return (
     <HeaderContentDiv>

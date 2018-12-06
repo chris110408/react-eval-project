@@ -29,17 +29,8 @@ const query = {
     minWidth: 1200
   }
 }
-
-export const BasicLayout = ({
-  dispatch,
-  match,
-  location,
-  layoutObj,
-  setIsMobile,
-  setCollapsed,
-  currentUser,
-  children
-}) => {
+// eslint-disable-next-line
+export const BasicLayout = ({ dispatch, match, location, layoutObj, setIsMobile, setCollapsed, currentUser, children }) => {
   const { collapsed, isMobile } = layoutObj
   const toggle = () => {
     setCollapsed({ collapsed: !collapsed })

@@ -25,7 +25,7 @@ export const menuData = [
   }
 ]
 
-function formatter(data, parentPath = '', parentAuthority) {
+function formatter (data, parentPath = '', parentAuthority) {
   return data.map(item => {
     let { path } = item
     if (!isUrl(path)) {

@@ -1,8 +1,8 @@
-import { map, sort, split, last, compose, once } from 'ramda'
-import * as moment from 'moment'
+import { map, sort, compose } from 'ramda'
+import moment from 'moment'
 
 // (obj,obj)->num
-const diff = function(a, b) {
+const diff = function (a, b) {
   return b.stargazers_count - a.stargazers_count
 }
 
@@ -31,8 +31,8 @@ const repoTrimObj = obj => {
 export const createRepoArray = repoData => {
   return repoData
     ? compose(
-        sort(diff),
-        map(repoTrimObj)
-      )(repoData)
+      sort(diff),
+      map(repoTrimObj)
+    )(repoData)
     : []
 }

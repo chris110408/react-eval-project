@@ -1,5 +1,5 @@
 // obj->string
-import {compose, eqBy, map, uniqWith} from "ramda";
+import { compose, eqBy, map, uniqWith } from 'ramda'
 
 const byType = obj => {
   return obj.type

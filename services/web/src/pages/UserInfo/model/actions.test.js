@@ -1,13 +1,6 @@
 /* eslint-disable */
 
-import {
-  fetchReposAction,
-  fetchEventsAction,
-  FETCH_EVENTS,
-  FETCH_REPOS,
-  updateReposAction,
-  updateEventsAction
-} from './actions'
+import { fetchEventsAction, FETCH_EVENTS } from './actions'
 
 describe('UserInfo Action test', () => {
   test('returns an action with type FETCH_EVENTS', () => {

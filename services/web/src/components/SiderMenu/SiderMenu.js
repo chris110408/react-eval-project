@@ -2,7 +2,7 @@ import React from 'react'
 import { Layout, Menu, Icon } from 'antd'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import media from 'styled-media-query'
+import PropTypes from 'prop-types'
 
 const { Sider } = Layout
 const { SubMenu } = Menu
@@ -82,8 +82,8 @@ export const SiderMenu = ({
         onClick={
           isMobile
             ? () => {
-                onCollapse(true)
-              }
+              onCollapse(true)
+            }
             : undefined
         }
       >
@@ -167,4 +167,12 @@ export const SiderMenu = ({
       </Menu>
     </StyledSider>
   )
+}
+
+SiderMenu.propTypes = {
+  collapsed: PropTypes.bool,
+  onCollapse: PropTypes.func,
+  isMobile: PropTypes.bool,
+  location: PropTypes.object,
+  menuData: PropTypes.array
 }

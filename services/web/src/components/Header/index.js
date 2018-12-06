@@ -3,6 +3,7 @@ import { Menu, Icon, Spin, Dropdown, Avatar } from 'antd'
 import styled from 'styled-components'
 import PageHeader from '../PageHeader'
 import PropTypes from 'prop-types'
+import { ExtraContent } from '../../pages/UserInfo/ExtraContent'
 
 const DivRight = styled.div`
   padding: 0 1rem;
@@ -51,8 +52,15 @@ const StyledIconTrigger = styled(Icon)`
     // background: @primary-1;
   }
 `
+
+// bool
 // eslint-disable-next-line
-const GlobalHeader = ({ collapsed, onCollapse, onHeadMenuClick, currentUser}) => {
+const GlobalHeader = ({
+  collapsed,
+  onCollapse,
+  onHeadMenuClick,
+  currentUser
+}) => {
   const menu = (
     <Menu selectedKeys={[]} onClick={onHeadMenuClick}>
       <Menu.Item>
@@ -90,6 +98,13 @@ const GlobalHeader = ({ collapsed, onCollapse, onHeadMenuClick, currentUser}) =>
       </DivRight>
     </div>
   )
+}
+
+GlobalHeader.propTypes = {
+  collapsed: PropTypes.bool,
+  onCollapse: PropTypes.func,
+  onHeadMenuClick: PropTypes.func,
+  currentUser: PropTypes.object
 }
 
 export default GlobalHeader

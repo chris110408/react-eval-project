@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Button, Icon, List, Row, Col } from 'antd'
+import { Row, Col } from 'antd'
 import { HeaderContent } from './HeaderContent'
 import { ExtraContent } from './ExtraContent'
 import { Repos } from './Repos'
@@ -8,53 +8,9 @@ import PageHeader from '../../components/PageHeader'
 import { MainPageDiv } from './styles'
 import { lifecycle } from 'recompose'
 import { fetchReposAction, fetchEventsAction } from './model/actions'
-// import { createEventArray } from './fns'
-
-import {
-  reduce,
-  map,
-  sort,
-  split,
-  compose,
-  last,
-  uniqWith,
-  eqBy,
-  toPairs
-} from 'ramda'
-// import shortid from 'shortid'
-
-import { createEventArray } from './fns/'
+import PropTypes from 'prop-types'
 
 export const UserInfo = ({ dispatch, user, repoData, eventData }) => {
-  const createSingleDateEvent = (acc, item) => {
-    const key = item.created_at
-    const _type = item.type
-
-    if (acc[`${key}`]) {
-      if (acc[`${key}`][[`${_type}`]]) {
-        acc[`${key}`][[`${_type}`]] = acc[`${key}`][[`${_type}`]] + 1
-      } else {
-        acc[`${key}`][[`${_type}`]] = 1
-      }
-      return acc
-    }
-    let initObj = {}
-    initObj[`${_type}`] = 1
-    acc[`${key}`] = Object.assign({}, initObj)
-    return acc
-  }
-  const convertArrayItemToObj = xs => {
-    return Object.assign({}, { date: xs[0] }, xs[1])
-  }
-
-  const finalObj = compose(
-    map(convertArrayItemToObj),
-    toPairs,
-    reduce(createSingleDateEvent, {})
-  )
-
-  console.log(finalObj(eventData))
-
   return (
     <MainPageDiv>
       <PageHeader>
@@ -76,6 +32,13 @@ export const UserInfo = ({ dispatch, user, repoData, eventData }) => {
       </Row>
     </MainPageDiv>
   )
+}
+
+UserInfo.propTypes = {
+  dispatch: PropTypes.func,
+  user: PropTypes.object,
+  repoData: PropTypes.any.isRequired,
+  eventData: PropTypes.any.isRequired
 }
 
 export const UserInfoPage = lifecycle({

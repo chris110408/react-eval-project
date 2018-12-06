@@ -1,4 +1,4 @@
-import { eqBy, uniqWith, compose, map, toPairs, reduce } from 'ramda'
+import { compose, map, toPairs, reduce } from 'ramda'
 
 const createSingleDateEvent = (acc, item) => {
   const key = item.created_at

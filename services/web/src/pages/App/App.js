@@ -11,6 +11,7 @@ import BasicLayout from '../../layouts/'
 import UserInfoPage from '../UserInfo'
 import AnalysisPage from '../Analysis'
 import { withSaga } from '../Login/model/sagas'
+import PropTypes from 'prop-types'
 
 // const GuestRoute = withProps({ authority: USER_TYPE_GUEST })(AuthorizedRouter);
 // const UserRoute = withProps({ authority: USER_TYPE_REG })(AuthorizedRouter);
@@ -32,6 +33,11 @@ const App = ({ dispatch, user }) => {
       </Switch>
     </div>
   )
+}
+
+App.propTypes = {
+  dispatch: PropTypes.func,
+  user: PropTypes.object
 }
 
 export default withSaga(App)

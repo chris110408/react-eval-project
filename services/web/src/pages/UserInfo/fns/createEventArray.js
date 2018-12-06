@@ -1,5 +1,5 @@
 import { map, sort, split, compose, last, toPairs } from 'ramda'
-import * as moment from 'moment'
+import moment from 'moment'
 
 const convertListToArray = data => {
   return compose(
