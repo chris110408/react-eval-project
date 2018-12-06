@@ -62,16 +62,19 @@ you should able to  see the webpage at http://localhost:3000
 the structure of the project.
 
 there are tons of ways to structure the react project. I would love to change my preference for the future team. However, if I make the decision will choose the following structure which I used in this project.
-----page
-------fns(all the key algorithm for model)
-------model
-------------actions(action sand action creaters )
-------------saga(injected to this page)
-------------reducer(used in this page)
-------------selector(I normally use reselector ,did not use it because there
-------tyles(css )
-------sub-page-components(only used for this page)
-------index
+##
+|                  |  |     |                   |
+|------------------|---------|-------------|------------------------|
+| page             |                                                |
+|     | fns     |  |   (all the key algorithm for model)          |
+|     |model     |  |   (all the key algorithm for model)          |
+|     |    | actions |  (action sand action creaters )        |
+|     |    | saga | (injected to this page)       |
+|     |    | reducer | (injected to this page)       |
+|     |    | reducer | (I normally use reselector ,did not use it because there      |
+|     | tyles     |  |   (css)          |
+|     | sub-page-components     |  | (only used for this page,may create a folder for it)        |
+|     | index    |  |            |
 
 ###saga, reducers
 
