@@ -76,6 +76,7 @@ there are tons of ways to structure the react project. I would love to change my
 |     | sub-page-components     |  | (only used for this page,may create a folder for it)        |
 |     | index    |  |            |
 
+##
 ###saga, reducers
 
 only root reducer is inited at the beginning, other reducers and sagas are injected when I need them. the main config file is in the config/configure store.js   the rest parts are in the utils folder.
