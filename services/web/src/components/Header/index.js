@@ -1,9 +1,7 @@
 import React from 'react'
 import { Menu, Icon, Spin, Dropdown, Avatar } from 'antd'
 import styled from 'styled-components'
-import PageHeader from '../PageHeader'
 import PropTypes from 'prop-types'
-import { ExtraContent } from '../../pages/UserInfo/ExtraContent'
 
 const DivRight = styled.div`
   padding: 0 1rem;
@@ -63,9 +61,9 @@ const GlobalHeader = ({
 }) => {
   const menu = (
     <Menu selectedKeys={[]} onClick={onHeadMenuClick}>
-      <Menu.Item>
-        <Icon type='user' />
-        User Info
+      <Menu.Item disabled>
+        <Icon type='setting' />
+        System Setting
       </Menu.Item>
       <Menu.Divider />
       <Menu.Item disabled>

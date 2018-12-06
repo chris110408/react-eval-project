@@ -42,19 +42,21 @@ export const CardMetaDiv = styled.div`
   }
 `
 // eslint-disable-next-line
-const Repos = ({ repos }) => {
+const Repos = ({ repos, load }) => {
   return (
     <div>
       <Card
         style={{ marginBottom: 24, marginTop: 10 }}
         title='All Repos'
         bordered={false}
+        loading={load}
       >
         <Row gutter={24}>
           {repos.map(item => (
             <Col key={shortid.generate()} xl={8} lg={8} md={12} sm={12} xs={24}>
               <CardContainerDiv>
                 <Card
+                  loading={load}
                   className='repos'
                   style={{
                     margin: '1px auto 4px auto',
@@ -131,6 +133,11 @@ const Repos = ({ repos }) => {
       </Card>
     </div>
   )
+}
+
+Repos.propTypes = {
+  repos: PropTypes.any.isRequired,
+  load: PropTypes.bool
 }
 
 export { Repos }

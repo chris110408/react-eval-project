@@ -11,7 +11,7 @@ import injectSaga from '../../../utils/injectSaga'
 import { requestFetchRepos, requestFetchEvents } from '../../../service/api'
 import { DAEMON } from '../../../utils/constants'
 
-export function * fetchRepos(action) {
+export function * fetchRepos (action) {
   const response = yield call(requestFetchRepos)
 
   if (response) {

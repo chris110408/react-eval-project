@@ -26,7 +26,7 @@ export const UserInfo = ({ dispatch, user, repoData, eventData }) => {
       </PageHeader>
       <Row gutter={24}>
         <Col xl={24} lg={24} md={24} sm={24} xs={24}>
-          <Repos repos={repoData} />
+          <Repos repos={repoData} load={repoData.size === 0} />
           <Events events={eventData} />
         </Col>
       </Row>

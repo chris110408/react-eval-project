@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Tag, Row, Col } from 'antd'
+import { Avatar, Tag } from 'antd'
 import { HeaderContentDiv } from './styles'
 import { map, trim, split, compose } from 'ramda'
 import shortid from 'shortid'
