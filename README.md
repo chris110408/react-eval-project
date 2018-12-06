@@ -72,7 +72,7 @@ there are tons of ways to structure the react project. I would love to change my
 |     |    | saga | (injected to this page)       |
 |     |    | reducer | (injected to this page)       |
 |     |    | reducer | (I normally use reselector ,did not use it because there      |
-|     | tyles     |  |   (css)          |
+|     | styles     |  |   (css)          |
 |     | sub-page-components     |  | (only used for this page,may create a folder for it)        |
 |     | index    |  |            |
 
