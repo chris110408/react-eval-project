@@ -88,9 +88,6 @@ only root reducer is inited at the beginning, other reducers and sagas are injec
 
 Sorry for not using D3. I have not used D3 before. And I used Bizcharts which is developed and supported by Alibaba.
 https://github.com/alibaba/BizCharts/
-I would like to learn D3. and by the end of this month,  I should be able to develop charts like those I used in this project.
-
-
 
 
 
